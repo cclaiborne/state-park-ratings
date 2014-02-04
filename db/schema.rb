@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140204190018) do
+ActiveRecord::Schema.define(version: 20140204192832) do
 
   create_table "campsites", force: true do |t|
     t.string   "name"
@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 20140204190018) do
   create_table "ratings", force: true do |t|
     t.integer  "stars"
     t.text     "comment"
-    t.string   "name"
     t.text     "description"
     t.string   "location"
     t.float    "latitude"
