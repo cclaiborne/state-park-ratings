@@ -13,7 +13,7 @@ feature "BrowseCampsites" do
     page.find('tbody td[1]').text.must_include(@recentcampsiteid)
   end
 
-  scnenario "As a visitor I want to see a map of all the campsite locations
+  scenario "As a visitor I want to see a map of all the campsite locations
   so that I know where it is located." do
     #given a visitor
     #when I browse the home page
