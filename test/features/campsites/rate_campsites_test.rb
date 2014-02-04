@@ -10,5 +10,6 @@ feature "RateCampsites" do
     fill_in 'Comment', :with => 'This is a great campsite!'
     #then I may be redirected to the campsite show page
     click_on 'Create Rating'
+    page.text.must_include "Thanks for rating this site!"
   end
 end
