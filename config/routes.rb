@@ -5,7 +5,7 @@ Statepark::Application.routes.draw do
 
   resources :campsites
 
-  root 'campsites#index'
+  root 'ratings#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
