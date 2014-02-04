@@ -2,7 +2,7 @@
 # http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 good_camp_site:
-  name: Serenity Forrest Campground"
+  name: Serenity Forrest Campground
   description: Quite and peaceful campground on the water.
   location: "Hoh, WA"
 
