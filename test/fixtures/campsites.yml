@@ -2,10 +2,12 @@
 # http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 good_camp_site:
-  name: "Serenity Forrest Campground"
-  description: "Quite and peaceful campground on the water."
+  name: Serenity Forrest Campground"
+  description: Quite and peaceful campground on the water.
+  location: "Hoh, WA"
 
 bad_camp_site:
-  name: "Swampy Pastures Campground"
-  description: "Boggy "
+  name: Swampy Pastures Campground
+  description: Remote campground with distinguished aromas.
+  location: "Portland, OR"
 
