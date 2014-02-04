@@ -3,7 +3,9 @@
 
 good_camp_site:
   name: "Serenity Forrest Campground"
+  description: "Quite and peaceful campground on the water."
 
 bad_camp_site:
   name: "Swampy Pastures Campground"
+  description: "Boggy "
 
