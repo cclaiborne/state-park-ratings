@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>Id</th>
       <th>Name</th>
       <th></th>
       <th></th>
@@ -13,6 +14,7 @@
   <tbody>
     <% @campsites.each do |campsite| %>
       <tr>
+        <td><%= campsite.id %></td>
         <td><%= campsite.name %></td>
         <td><%= link_to 'Show', campsite %></td>
         <td><%= link_to 'Edit', edit_campsite_path(campsite) %></td>
