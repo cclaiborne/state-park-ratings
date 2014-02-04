@@ -22,10 +22,22 @@
   </head>
 
   <body>
+  <nav class="top-bar">
+  <ul class="title-area">
+    <li class="name">
+      <h1><%= link_to "State Park Ratings", root_path %></a></h1>
+    </li>
+  </ul>
+  <section class="top-bar-section">
+    <ul class="right">
+      <li class="divider"></li>
+      <li><%= link_to "Users", users_path %><li>
+    </ul>
+  </section>
+</nav>
 
     <%= yield %>
 
-    
-    <%= javascript_include_tag "application" %>
+
   </body>
 </html>
