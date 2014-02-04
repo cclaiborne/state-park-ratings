@@ -1,22 +1,15 @@
 # Read about fixtures at
 # http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  stars: 1
-  comment: MyText
-  campsite_id: 1
-  name: MyString
-  description: MyText
-  location: MyString
-  latitude: 1.5
-  longitude: 1.5
+positive:
+  stars: 5
+  comment: "Beautiful campground! Had a great time!"
+  campsite: good_camp_site
+  user: happy_camper
 
-two:
+negative:
   stars: 1
-  comment: MyText
-  campsite_id: 1
-  name: MyString
-  description: MyText
-  location: MyString
-  latitude: 1.5
-  longitude: 1.5
+  comment: "This place smells! Too many mosquitos!"
+  campsite: bad_camp_site
+  user: sad_camper
+
