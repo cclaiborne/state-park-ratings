@@ -1,4 +1,8 @@
 Statepark::Application.routes.draw do
+  resources :ratings
+
+  resources :users
+
   resources :campsites
 
   root 'campsites#index'
