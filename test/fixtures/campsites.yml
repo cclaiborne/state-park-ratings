@@ -1,8 +1,9 @@
 # Read about fixtures at
 # http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  name: MyString
+good_camp_site:
+  name: "Serenity Forrest Campground"
 
-two:
-  name: MyString
+bad_camp_site:
+  name: "Swampy Pastures Campground"
+
