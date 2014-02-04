@@ -2,7 +2,7 @@ require "test_helper"
 
 feature "BrowseCampsites" do
   scenario "As a visitor I want to browse campsites so
-  that I can find the most recently rated campsites" do
+  that I can find the most recently rated campsites." do
     #given the campsite index page
     visit root_path
     #when I browse campsites
@@ -22,7 +22,7 @@ feature "BrowseCampsites" do
     page.must_have_selector('#map')
   end
 
-  scnenario "As a visitor I want to see a map of the campsite location
+  scenario "As a visitor I want to see a map of the campsite location
   so that I know where it is located." do
     #given a campsite index page
     visit root_path
