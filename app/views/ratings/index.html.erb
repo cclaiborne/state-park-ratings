@@ -5,15 +5,13 @@
     <tr>
       <th>Stars</th>
       <th>Comment</th>
-      <th>Campsite</th>
-      <th>Name</th>
-      <th>Description</th>
+      <th>Updated_at</th>
+      <th>C_id</th>
+      <th>U_id</th>
       <th>Location</th>
-      <th>Latitude</th>
-      <th>Longitude</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Campsite Name</th>
+      <th>Lat</th>
+      <th>Long</th>
     </tr>
   </thead>
 
@@ -22,15 +20,14 @@
       <tr>
         <td><%= rating.stars %></td>
         <td><%= rating.comment %></td>
-        <td><%= rating.campsite_id %></td>
-        <td><%= rating.name %></td>
-        <td><%= rating.description %></td>
-        <td><%= rating.location %></td>
-        <td><%= rating.latitude %></td>
-        <td><%= rating.longitude %></td>
-        <td><%= link_to 'Show', rating %></td>
-        <td><%= link_to 'Edit', edit_rating_path(rating) %></td>
-        <td><%= link_to 'Destroy', rating, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= rating.updated_at %></td>
+        <!-- TODO: re-write with .includes() -->
+        <td><%= rating.campsite.id %></td>
+        <td><%= rating.user.id %></td>
+        <td><%= rating.campsite.location %></td>
+        <td><%= link_to rating.campsite.name, rating_path(rating) %></td>
+        <td><%= rating.campsite.latitude %></td>
+        <td><%= rating.campsite.longitude %></td>
       </tr>
     <% end %>
   </tbody>

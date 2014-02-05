@@ -4,7 +4,7 @@ class RatingsController < ApplicationController
   # GET /ratings
   # GET /ratings.json
   def index
-    @ratings = Rating.all
+    @ratings = Rating.order(created_at: :desc).limit(10)
   end
 
   # GET /ratings/1

@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
+<p id="notice">
+  <%= notice %>
+</p>
 
 <p>
   <strong>Name:</strong>
@@ -9,6 +11,28 @@
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
+
+<h3>Listing the campsites that this user has rated:</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Stars</th>
+      <th>Comment</th>
+      <th>Name</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @user.ratings.each do |rating| %>
+      <tr>
+        <td><%= rating.stars %></td>
+        <td><%= rating.comment %></td>
+        <td><%= link_to rating.campsite.name, campsite_path(rating.campsite) %></td>
+        <td><%= rating.campsite.location %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
