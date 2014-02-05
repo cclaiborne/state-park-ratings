@@ -8,9 +8,10 @@ feature "BrowseCampsites" do
     #when I browse campsites
     page.must_have_selector('table tr', :count => Campsite.all.count + 1)
     #then I find the highest rated campsites
-    page.must_have_selector('tbody td[1]')
-    @recentcampsiteid = Ratings.order(:created_at).last.campsite_id
-    page.find('tbody td[1]').text.must_include(@recentcampsiteid)
+    @recent_campsite = Rating.order(:created_at).last.campsite
+    page.find('tbody tr[1] td[7]').text.must_include(@recent_campsite.name)
+    page.find('tbody tr[1] td[8]').text.must_include(@recent_campsite.latitude.to_s)
+    page.find('tbody tr[1] td[9]').text.must_include(@recent_campsite.longitude.to_s)
   end
 
   scenario "As a visitor I want to see a map of all the campsite locations
