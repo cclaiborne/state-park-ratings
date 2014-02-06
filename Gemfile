@@ -14,7 +14,8 @@ gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
-
+gem 'gmaps4rails', '~> 2.1.1'
+gem 'geocoder', '~> 1.1.9'
 gem 'zurb-foundation'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -23,10 +24,10 @@ gem 'zurb-foundation'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
-gem "minitest-rails"
+gem 'minitest-rails'
 
 group :test do
-  gem "minitest-rails-capybara"
+  gem 'minitest-rails-capybara'
   gem 'turn'
 end
 
@@ -38,9 +39,9 @@ gem 'jbuilder', '~> 1.2'
 
 
 group :development do
-  gem "awesome_print"
-  gem "better_errors"
-  gem "binding_of_caller"
+  gem 'awesome_print'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :doc do
