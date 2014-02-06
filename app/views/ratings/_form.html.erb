@@ -10,31 +10,18 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :id %><br>
-    <%= f.number_field :id %>
-  </div>
   <div class="field">
     <%= f.label :stars %><br>
-    <%= f.number_field :stars %>
+    <%= f.select :stars, options_for_select([1,2,3,4,5]) %>
   </div>
   <div class="field">
     <%= f.label :comment %><br>
     <%= f.text_area :comment %>
   </div>
-<!--   <div class="field">
-    <%= f.label :campsite_id %><br>
-    <%= f.number_field :campsite_id %>
-  </div> -->
   <div class="field">
     <%= f.label :choose_a_camground %>
     <%= f.select :campsite_id, Campsite.all.collect { |p| [ p.name, p.id ] } %>
   </div>
-<!--   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
-  </div> -->
  <div class="field">
     <%= f.label :choose_a_user%>
     <%= f.select :user_id, User.all.collect { |p| [ p.name, p.id ] } %>

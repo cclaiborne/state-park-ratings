@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <th>Stars</th>
+      <th>Comment</th>
+      <th>Rated On</th>
+      <th>Camper</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @ratings.each do |rating| %>
+      <tr>
+        <td><%= rating.stars %></td>
+        <td><%= rating.comment %></td>
+        <% d = rating.updated_at %>
+        <td><%= "#{d.month}/#{d.day}/#{d.year}" %></td>
+        <!-- TODO: re-write with .includes() -->
+        <td><%= rating.user.nil? ? 'nil' : rating.user.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

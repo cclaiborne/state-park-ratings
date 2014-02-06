@@ -18,6 +18,8 @@ class CampsitesController < ApplicationController
       marker.lat campsite.latitude
       marker.lng campsite.longitude
     end
+    @rating = Rating.new
+    @ratings = Rating.order(updated_at: :desc).all
   end
 
   # GET /campsites/new
@@ -78,5 +80,9 @@ class CampsitesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def campsite_params
       params.require(:campsite).permit(:name, :description, :location, :latitude, :longitude)
+    end
+
+    def rating_params
+      params.require(:rating).permit(:stars, :comment, :campsite_id, :name, :description, :location, :latitude, :longitude, :user_id)
     end
 end

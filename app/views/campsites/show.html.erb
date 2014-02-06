@@ -4,7 +4,7 @@
   <div class="small-6 columns">
     <h2 class="subheader"><%= @campsite.name %></h2>
     <p><%= @campsite.description %></p>
-
+    <%= render 'ratings/form' %>
   </div>
   <div class="small-6 columns">
     <h2 class="subheader">Map Goes Here</h2>
@@ -12,8 +12,11 @@
   </div>
 </div>
 
-<%= link_to 'Edit', edit_campsite_path(@campsite) %> |
-<%= link_to 'Back', campsites_path %>
+<div class="row">
+  <div class="small-12 columns">
+    <%= render 'ratings_table' %>
+  </div>
+</div>
 <%= content_for :gmaps_script do %>
   <script type='text/javascript'>
     handler = Gmaps.build('Google');
