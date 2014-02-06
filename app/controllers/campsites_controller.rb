@@ -5,11 +5,19 @@ class CampsitesController < ApplicationController
   # GET /campsites.json
   def index
     @campsites = Campsite.all
+    @map_marker_hash = Gmaps4rails.build_markers(@campsites) do |campsite, marker|
+      marker.lat campsite.latitude
+      marker.lng campsite.longitude
+    end
   end
 
   # GET /campsites/1
   # GET /campsites/1.json
   def show
+    @map_marker_hash = Gmaps4rails.build_markers(@campsite) do |campsite, marker|
+      marker.lat campsite.latitude
+      marker.lng campsite.longitude
+    end
   end
 
   # GET /campsites/new
