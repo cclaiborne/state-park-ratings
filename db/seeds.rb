@@ -29,7 +29,7 @@ campsites = Campsite.create([
 
 50.times do
   Rating.create([
-      { stars: 5, comment: "What a great campsit.", user_id: 1, campsite_id: 1 },
+      { stars: 5, comment: "What a great campsite.", user_id: 1, campsite_id: 1 },
       { stars: 1, comment: "This place smells.", user_id: 2, campsite_id: 2}
     ])
 end
