@@ -15,9 +15,16 @@
 end
 
 campsites = Campsite.create([
-    { id: 11, name: "Serenity Forrest Campground", description: "Quite and peaceful campground on the water.", location: "Hoh, WA" },
-    { id: 12, name: "Swampy Pastures Campground", description: "Remote campground with distinguished aromas.", location: "Portland, OR" },
-    { id: 13, name: "I-5 Colonade", description: "A quaint camping ground with a sweet mountain bike track.", location: "Seattle, WA"}
+    {name: "Serenity Forrest Campground", description: "Quite and peaceful campground on the water.", location: "Hoh, WA" },
+    {name: "Swampy Pastures Campground", description: "Remote campground with distinguished aromas.", location: "Portland, OR" },
+    {name: "Bainbridge Folley", description: "A quaint camping ground with a sweet mountain bike track.", location: "Bainbridge, WA"}
+    {name: "Spokane RV Park", description: "A quaint camping ground with a sweet mountain bike track.", location: "Spokane, WA"}
+    {name: "Yakima Valley Campground", description: "A quaint camping ground with a sweet mountain bike track.", location: "Yakima, WA"}
+    {name: "Yacolt Heights RV Park and Campground", description: "A quaint camping ground with a sweet mountain bike track.", location: "Yacolt, WA"}
+    {name: "Puyallup Campgrounds", description: "A quaint camping ground with a sweet mountain bike track.", location: "Puyallup, WA"}
+    {name: "Monroe Camp and RV", description: "A quaint camping ground with a sweet mountain bike track.", location: "Monroe, WA"}
+    {name: "Concrete Wall and Campground", description: "A quaint camping ground with a sweet mountain bike track.", location: "Concrete, WA"}
+    {name: "Ground Battle Ground Camp Ground", description: "A quaint camping ground with a sweet mountain bike track.", location: "Battle Ground, WA"}
   ])
 
 50.times do
