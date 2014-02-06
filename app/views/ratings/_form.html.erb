@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :id %><br>
+    <%= f.number_field :id %>
+  </div>
+  <div class="field">
     <%= f.label :stars %><br>
     <%= f.number_field :stars %>
   </div>
@@ -24,24 +28,8 @@
     <%= f.number_field :campsite_id %>
   </div>
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :location %><br>
-    <%= f.text_field :location %>
-  </div>
-  <div class="field">
-    <%= f.label :latitude %><br>
-    <%= f.text_field :latitude %>
-  </div>
-  <div class="field">
-    <%= f.label :longitude %><br>
-    <%= f.text_field :longitude %>
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
   </div>
   <div class="actions">
     <%= f.submit %>
