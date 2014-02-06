@@ -17,7 +17,9 @@ campsites = Campsite.create([
     { id: 13, name: "I-5 Colonade", description: "A quaint camping ground with a sweet mountain bike track.", location: "Seattle, WA"}
   ])
 
-ratings = Rating.create([
-    { id: 10, stars: 5, comment: "What a great campsit.", user_id: 1, campsite_id: 11 },
-    { id: 20, stars: 1, comment: "This place smells.", user_id: 2, campsite_id: 12}
-  ])
+50.times do
+  Rating.create([
+      { stars: 5, comment: "What a great campsit.", user_id: 1, campsite_id: 11 },
+      { stars: 1, comment: "This place smells.", user_id: 2, campsite_id: 12}
+    ])
+end
