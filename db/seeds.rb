@@ -9,8 +9,8 @@
 
 50. times do |num|
   User.create([
-      { name: 'Happy Camper', email: 'happy_camper_#{num}@example.com' },
-      { name: 'Sad Camper', email: 'sad_camper_#{num}@example.com' },
+      { name: 'Happy Camper', email: "happy_camper_#{num}@example.com" },
+      { name: 'Sad Camper', email: "sad_camper_#{num}@example.com" },
     ])
 end
 
