@@ -9,24 +9,22 @@
     <table>
       <thead>
         <tr>
-          <th>ID</th>
           <th>Name</th>
           <th>Location</th>
-          <th>Latitude</th>
-          <th>Longitude</th>
+          <th>Average Rating</th>
         </tr>
       </thead>
       <tbody>
         <% @campsites.each do |campsite| %>
           <tr>
-            <td><%= campsite.id %></td>
             <td><%= link_to campsite.name, campsite %></td>
             <td><%= campsite.location %></td>
-            <td><%= campsite.latitude %></td>
-            <td><%= campsite.longitude %></td>
             <!-- TODO: Change this line to a button_to flag for review. -->
             <!-- <td><%= link_to 'Destroy', campsite, method: :delete,
                               data: { confirm: 'Are you sure?' } %></td> -->
+            <% campsite_ratings = campsite.ratings.map { |rating| rating.stars } %>
+            <% ratings_average = campsite_ratings.sum / campsite_ratings.size.to_f %>
+            <td><%= ratings_average.nan? ? "Not Yet Rated" : ratings_average %></td>
           </tr>
         <% end %>
       </tbody>
