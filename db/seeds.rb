@@ -6,10 +6,13 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-users = User.create([
-    { id: 1, name: 'Happy Camper', email: 'happy_camper@example.com' },
-    { id: 2, name: 'Sad Camper', email: 'sad_camper@example.com' }
-  ])
+
+50. times do |num|
+  User.create([
+      { name: 'Happy Camper', email: 'happy_camper_#{num}@example.com' },
+      { name: 'Sad Camper', email: 'sad_camper_#{num}@example.com' },
+    ])
+end
 
 campsites = Campsite.create([
     { id: 11, name: "Serenity Forrest Campground", description: "Quite and peaceful campground on the water.", location: "Hoh, WA" },
