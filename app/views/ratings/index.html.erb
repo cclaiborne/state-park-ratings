@@ -26,7 +26,7 @@
         <td><%= rating.updated_at %></td>
         <!-- TODO: re-write with .includes() -->
         <td><%= rating.campsite.id %></td>
-        <td><%= rating.user.id %></td>
+        <td><%= rating.user.nil? ? "0" : rating.user.id %></td>
         <td><%= rating.campsite.location %></td>
         <td><%= link_to rating.campsite.name, campsite_path(rating.campsite) %></td>
         <td><%= rating.campsite.latitude %></td>
