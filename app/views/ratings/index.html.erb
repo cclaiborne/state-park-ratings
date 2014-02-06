@@ -1,58 +1,58 @@
 <script src="//maps.google.com/maps/api/js?v=3.13&amp;sensor=false&amp;libraries=geometry" type="text/javascript"></script>
 <script src='//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js' type='text/javascript'></script>
 
-<h1>Listing ratings</h1>
+<div class="row">
+  <div class="small-6 columns">
+    <h1>Listing ratings</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Stars</th>
+          <th>Comment</th>
+          <th>Rated On</th>
+          <th>Camper</th>
+          <th>Location</th>
+          <th>Campsite Name</th>
+        </tr>
+      </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Stars</th>
-      <th>Comment</th>
-      <th>Updated_at</th>
-      <th>C_id</th>
-      <th>U_id</th>
-      <th>Location</th>
-      <th>Campsite Name</th>
-      <th>Lat</th>
-      <th>Long</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @ratings.each do |rating| %>
-      <tr>
-        <td><%= rating.stars %></td>
-        <td><%= rating.comment %></td>
-        <td><%= rating.updated_at %></td>
-        <!-- TODO: re-write with .includes() -->
-        <td><%= rating.campsite.id %></td>
-        <td><%= rating.user.nil? ? "0" : rating.user.id %></td>
-        <td><%= rating.campsite.location %></td>
-        <td><%= link_to rating.campsite.name, campsite_path(rating.campsite) %></td>
-        <td><%= rating.campsite.latitude %></td>
-        <td><%= rating.campsite.longitude %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<%= link_to 'New Rating', new_rating_path %>
-
-<br>
-
-<div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px;'></div>
+      <tbody>
+        <% @ratings.each do |rating| %>
+          <tr>
+            <td><%= rating.stars %></td>
+            <td><%= rating.comment %></td>
+            <% d = rating.updated_at %>
+            <td><%= "#{d.month}/#{d.day}/#{d.year}" %></td>
+            <!-- TODO: re-write with .includes() -->
+            <td><%= rating.user.nil? ? 'nil' : rating.user.name %></td>
+            <td><%= rating.campsite.location %></td>
+            <td><%= link_to rating.campsite.name, campsite_path(rating.campsite) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= link_to 'New Rating', new_rating_path %>
+    <br>
+  </div>
+  <h1></h1>
+  <div class="small-6 columns">
+     <div id="map" style='width: 600px; height: 700px;'></div>
+  </div>
 </div>
-
 <%# render '/map' %>
-<script type='text/javascript'>
-handler = Gmaps.build('Google');
-handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-  markers = handler.addMarkers(<%=raw @map_marker_hash.to_json %>);
-  handler.bounds.extendWith(markers);
-  handler.fitMapToBounds();
-});
-</script>
-
+<%= content_for :gmaps_script do %>
+  <script type='text/javascript'>
+    handler = Gmaps.build('Google');
+    handler.buildMap(
+      {provider: {}, internal: {id: 'map'}},
+      function(){
+        markers = handler.addMarkers(<%=raw @map_marker_hash.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+      }
+    );
+  </script>
+<% end %>
 
 
 
