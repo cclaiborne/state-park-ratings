@@ -19,7 +19,7 @@ class CampsitesController < ApplicationController
       marker.lng campsite.longitude
     end
     @rating = Rating.new
-    @ratings = Rating.paginate(:page => params[:page], per_page: 8).order(updated_at: :desc)
+    @ratings = Rating.paginate(:page => params[:page], per_page: 8).order(created_at: :desc)
   end
 
   # GET /campsites/new
