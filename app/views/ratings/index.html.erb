@@ -17,6 +17,7 @@
       </thead>
 
       <tbody>
+        <%= will_paginate @ratings %>
         <% @ratings.each do |rating| %>
           <tr>
             <td><%= rating.stars %></td>
