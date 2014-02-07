@@ -32,7 +32,7 @@ class RatingsController < ApplicationController
 
     respond_to do |format|
       if @rating.save
-        format.html { redirect_to @rating, notice: 'Rating was successfully created.' }
+        format.html { redirect_to @rating, notice: "Thanks for rating this campsite!" }
         format.json { render action: 'show', status: :created, location: @rating }
       else
         format.html { render action: 'new' }
