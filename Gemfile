@@ -26,6 +26,7 @@ group :development, :test do
 end
 
 group :test do
+  gem 'simplecov', require: false
   gem 'minitest-rails-capybara'
   gem 'turn'
 end
