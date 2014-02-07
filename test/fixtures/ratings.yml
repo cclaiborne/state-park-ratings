@@ -4,12 +4,12 @@
 positive:
   stars: 5
   comment: "Beautiful campground! Had a great time!"
-  campsite: good_camp_site
+  campsite: good_campsite
   user: happy_camper
 
 negative:
   stars: 1
   comment: "This place smells! Too many mosquitos!"
-  campsite: bad_camp_site
+  campsite: bad_campsite
   user: sad_camper
 
