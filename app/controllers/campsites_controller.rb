@@ -4,7 +4,7 @@ class CampsitesController < ApplicationController
   # GET /campsites
   # GET /campsites.json
   def index
-    @campsites = Campsite.all
+    @campsites = Campsite.paginate(:page => params[:page], per_page: 14).order(updated_at: :desc)
     @map_marker_hash = Gmaps4rails.build_markers(@campsites) do |campsite, marker|
       marker.lat campsite.latitude
       marker.lng campsite.longitude
@@ -19,7 +19,7 @@ class CampsitesController < ApplicationController
       marker.lng campsite.longitude
     end
     @rating = Rating.new
-    @ratings = Rating.order(updated_at: :desc).all
+    @ratings = Rating.paginate(:page => params[:page], per_page: 8).order(updated_at: :desc)
   end
 
   # GET /campsites/new

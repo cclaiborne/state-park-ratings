@@ -15,6 +15,7 @@
         </tr>
       </thead>
       <tbody>
+        <%= will_paginate @campsites %>
         <% @campsites.each do |campsite| %>
           <tr>
             <td><%= link_to campsite.name, campsite %></td>
