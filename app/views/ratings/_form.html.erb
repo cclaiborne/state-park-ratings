@@ -27,6 +27,6 @@
     <%= f.select :user_id, User.all.collect { |p| [ p.name, p.id ] } %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit" %>
   </div>
 <% end %>
