@@ -1,4 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
+# This file should, contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
 # Examples:
@@ -27,9 +27,17 @@ campsites = Campsite.create([
     { name: "Ground Battle Ground Camp Ground", description: "A quaint camping ground with a sweet mountain bike track.", location: "Battle Ground, WA"}
   ])
 
-50.times do
+campsite_id = 1
+t = Time.new
+10.times do
   Rating.create([
-      { stars: 5, comment: "What a great campsite.", user_id: 1, campsite_id: 1 },
-      { stars: 1, comment: "This place smells.", user_id: 2, campsite_id: 2}
+      { stars: 5, comment: "What a great campsite.", user_id: 1, campsite_id: campsite_id, created_at: t},
+      { stars: 4, comment: "Pretty good, but not great.", user_id: 1, campsite_id: campsite_id, created_at: t},
+      { stars: 3, comment: "It was average.", user_id: 2, campsite_id: campsite_id, created_at: t},
+      { stars: 2, comment: "Not the best.", user_id: 2, campsite_id: campsite_id, created_at: t},
+      { stars: 2, comment: "Not the best.", user_id: 2, campsite_id: campsite_id, created_at: t},
+      { stars: 1, comment: "What an awful campsite.", user_id: 2, campsite_id: campsite_id, created_at: t}
     ])
+  t -= 1.day
+  campsite_id += 1
 end

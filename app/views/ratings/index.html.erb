@@ -22,7 +22,7 @@
           <tr>
             <td><%= rating.stars %></td>
             <td><%= rating.comment %></td>
-            <% d = rating.updated_at %>
+            <% d = rating.created_at %>
             <td><%= "#{d.month}/#{d.day}/#{d.year}" %></td>
             <!-- TODO: re-write with .includes() -->
             <td><%= rating.user.nil? ? 'nil' : rating.user.name %></td>
