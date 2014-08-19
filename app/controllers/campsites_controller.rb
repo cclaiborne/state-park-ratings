@@ -1,5 +1,6 @@
 class CampsitesController < ApplicationController
   before_action :set_campsite, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /campsites
   # GET /campsites.json

@@ -5,9 +5,9 @@ class RatingsController < ApplicationController
   # GET /ratings.json
   def index
     @ratings = Rating.paginate(:page => params[:page], per_page: 14).order(created_at: :desc)
-    @map_marker_hash = Gmaps4rails.build_markers(@ratings) do |rating, marker|
-      marker.lat rating.campsite.latitude
-      marker.lng rating.campsite.longitude
+    # @map_marker_hash = Gmaps4rails.build_markers(@ratings) do |rating, marker|
+    #   marker.lat rating.campsite.latitude
+    #   marker.lng rating.campsite.longitude
     end
   end
 

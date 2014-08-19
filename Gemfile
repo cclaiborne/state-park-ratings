@@ -4,6 +4,7 @@ ruby '2.1.0'
 gem 'rails', '4.0.2'
 
 gem 'coffee-rails', '~> 4.0.0'
+gem 'devise'
 gem 'gmaps4rails', '~> 2.1.1'
 gem 'geocoder', '~> 1.1.9'
 gem 'jbuilder', '~> 1.2'
